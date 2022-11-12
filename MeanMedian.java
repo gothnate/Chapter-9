@@ -11,7 +11,6 @@ public class MeanMedian {
             //int line = 1;
             System.out.println("Enter Number " + i);
             numbers[i] = input.nextInt();
-
         }
         System.out.print("You entered: ");
         for (int j = 0; j < 8; j++) {
