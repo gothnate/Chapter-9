@@ -1,29 +1,28 @@
 import java.util.*;
 public class StringSort2 {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        String[] user = new String[15];
-        int size = 0;
-        int i;
-        String value;
-        String quit = "zzz";
 
-        System.out.print("Enter string or 'zzz' to quit >> ");
-        value = input.nextLine();
-        while (!value.equalsIgnoreCase(quit)) {
-            user[size] = value;
-            size++;
-            System.out.print("Enter string or 'zzz' to quit >> ");
-            value = input.nextLine();
+        String[] user = new String[15];
+        int i;
+        String done = "zzz";
+
+        for (i = 0; i < 15; i++) {
+            Scanner input = new Scanner(System.in);
+            System.out.print("Enter String >> ");
+            user[i] = input.nextLine();
+            if (user[i].equalsIgnoreCase(done)) {
+                break;
+            }
+            input.close();
         }
 
-        input.close();
-
-        for (i = 0; i < size; i++) {
-            if (user != null) {
-                Arrays.sort(user, 0, size, String.CASE_INSENSITIVE_ORDER);
+        System.out.println("You entered: ");
+        for (i = 0; i < 15; i++) {
+            if (user[i] != null && !user[i].equals(done)) {
+                Arrays.sort(user, Comparator.nullsLast(Comparator.naturalOrder()));
                 System.out.println(user[i]);
             }
         }
     }
+
 }
