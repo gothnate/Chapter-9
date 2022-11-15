@@ -13,13 +13,13 @@ public class SalespersonDatabase {
         option = input.nextLine().charAt(0);
         while (option != 'Q') {
             if (option == 'A') {
-                count = addOption(salespeople, count);
+                count = addOption(salespeople, count, input);
             } else {
                 if (option == 'D') {
-                    count = deleteOption(salespeople, count);
+                    count = deleteOption(salespeople, count, input);
                 } else {
                     if (option == 'C') {
-                        changeOption(salespeople, count);
+                        changeOption(salespeople, count, input);
                     } else {
                         System.out.println("Invalid Entry");
                     }
@@ -30,9 +30,8 @@ public class SalespersonDatabase {
         }
     }
 
-    public static int addOption(Salesperson[] array, int count) {
+    public static int addOption(Salesperson[] array, int count, Scanner input) {
         // Write your code here
-        Scanner input = new Scanner(System.in);
         int id;
         double sales;
         boolean alreadyEntered;
@@ -60,9 +59,8 @@ public class SalespersonDatabase {
         return count;
     }
 
-    public static int deleteOption(Salesperson[] array, int count) {
+    public static int deleteOption(Salesperson[] array, int count, Scanner input) {
         // Write your code here
-        Scanner input = new Scanner(System.in);
         int id;
         int position = 0;
         if (count == 0) {
@@ -91,11 +89,11 @@ public class SalespersonDatabase {
             display(array, count);
         }
         return count;
+
     }
 
-    public static void changeOption(Salesperson[] array, int count) {
+    public static void changeOption(Salesperson[] array, int count, Scanner input) {
         // Write your code here
-        Scanner input = new Scanner(System.in);
         int position = 0;
         int id;
         double sales;
@@ -122,7 +120,6 @@ public class SalespersonDatabase {
             display(array, count);
         }
     }
-
     public static void display(Salesperson[] array, int count) {
         // Write your code here
         int a, b;

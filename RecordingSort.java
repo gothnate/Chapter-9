@@ -70,7 +70,6 @@ public class RecordingSort {
                 }
             }
         }
-
     }
 
     public static void sortBySong(Recording[] array) {
